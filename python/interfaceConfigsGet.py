@@ -1,5 +1,3 @@
-#!/usr/bin/python3.5
-
 import os
 import subprocess
 import shutil
