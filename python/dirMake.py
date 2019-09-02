@@ -17,16 +17,16 @@ def hourMin():
 #def chkDir ():
 
 def makeDir ():
-    access_rights = 0o755
+    access_rights = 0o777
 
     config =  vars.Config()
-    local_config = config.local()
+    local_config = config.locations()
     
     patched = local_config.get("Prod_backup_dir")
     curr = str(patched) + str(hourMin())
     
     try:
-        os.mkdir(curr)
+        os.mkdir(curr, access_rights)
         
     except OSError:
         print ("Creation of the directory %s failed" % curr)

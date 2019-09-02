@@ -1,14 +1,20 @@
 class Config:
 
-    def local(self):
+    def locations(self):
         return {
-            "backup_dir": "/tmp/dirtest/",
-            "devops": "Mansur",
+            "Stage_backup_dir": "/tmp/dirtest/",
+            "Prod_backup_dir": "/tmp/backupprod/",
         }
 
-    def stg(self):
-        return {}
+    def username(self):
+        return {
+            "stage_username": "stage",
+            "prod_username": "prod",
+        }
     
 
-    def prod(self):
-        return {}
+    def password(self):
+        return {
+            "stage_password": "abc123+",
+            "prod_password": "ABC123+",
+        }
