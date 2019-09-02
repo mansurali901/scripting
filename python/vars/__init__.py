@@ -2,7 +2,7 @@ class Config:
 
     def local(self):
         return {
-            "temp_dir": "/tmp/dirtest/",
+            "backup_dir": "/tmp/dirtest/",
             "devops": "Mansur",
         }
 

@@ -14,21 +14,24 @@ def hourMin():
     timePrintermin = timeCal.tm_min
     return ("{0}{1}{2}-{3}{4}" .format(timePrinterday, timePrintermon, timePrinteryr, timePrinterhr, timePrintermin)) 
 
+#def chkDir ():
+
 def makeDir ():
     access_rights = 0o755
 
     config =  vars.Config()
     local_config = config.local()
-    print(local_config.get("devops"))
+    
+    patched = local_config.get("Prod_backup_dir")
     curr = str(patched) + str(hourMin())
     
-     try:
-         os.mkdir(curr)
+    try:
+        os.mkdir(curr)
         
-     except OSError:
-         print ("Creation of the directory %s failed" % curr)
-     else:
-             print ("Successfully created the directory %s " % curr)
+    except OSError:
+        print ("Creation of the directory %s failed" % curr)
+    else:
+        print ("Successfully created the directory %s " % curr)
 
 makeDir()
 
