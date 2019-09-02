@@ -4,7 +4,7 @@ import time
 import json
 import vars
 
-def hourMin ():
+def hourMin():
     timeCal = time.localtime(time.time())
     print (timeCal)
     timePrinteryr  = timeCal.tm_year
@@ -16,14 +16,19 @@ def hourMin ():
 
 def makeDir ():
     access_rights = 0o755
-    path = "/tmp/dirtest/"
-    curr = path + str(hourMin())
+
+    config =  vars.Config()
+    local_config = config.local()
+    print(local_config.get("devops"))
+    curr = str(patched) + str(hourMin())
     
-    try:
-        os.mkdir(curr)
+     try:
+         os.mkdir(curr)
         
-    except OSError:
-        print ("Creation of the directory %s failed" % curr)
-    else:
-            print ("Successfully created the directory %s " % curr)
+     except OSError:
+         print ("Creation of the directory %s failed" % curr)
+     else:
+             print ("Successfully created the directory %s " % curr)
+
 makeDir()
+
